@@ -1,0 +1,20 @@
+/* Estilos personalizados para SweetBite */
+
+/* Barra de desplazamiento nativa modificada para el contenedor del carrito */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #faf8f5;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3d2314;
+    border-radius: 3px;
+}
+
+/* Suavizado de transiciones globales opcionales */
+html {
+    scroll-behavior: smooth;
+}
