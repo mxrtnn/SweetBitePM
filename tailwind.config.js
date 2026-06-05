@@ -7,13 +7,13 @@ module.exports = {
         cream: '#fdfbf7',
         darkChocolate: '#2a1810',
         sweetPink: '#f2a1b5',
-        deepBurgundy: '#660f24', // Burdeo intenso
-        neonBurgundy: '#ff2a5f', // Rojo neón para efectos futuristas
+        deepBurgundy: '#660f24',
+        neonBurgundy: '#ff2a5f',
         softGray: '#f3f4f6'
       },
       fontFamily: {
-        brand: ['"Playfair Display"', 'serif'], // Letras elegantes
-        sans: ['"Outfit"', 'sans-serif'] // Letras modernas
+        brand: ['"Poppins"', 'sans-serif'], // Letras modernas y gruesas para títulos
+        sans: ['"Outfit"', 'sans-serif'] // Letras limpias para lectura
       },
       boxShadow: {
         'glow': '0 0 15px rgba(255, 42, 95, 0.5)',
