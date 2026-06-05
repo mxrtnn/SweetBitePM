@@ -3,289 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SweetBite - Galletas Artesanales</title>
+    <title>SweetBite - Galletas Artesanales Modernas</title>
     
-    <!-- Tailwind CSS Engine CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Vinculación de Configuración de Tailwind -->
     <script>
-        // Clonación de la configuración local para entorno CDN interactivo inmediato
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        cream: '#faf8f5',
-                        darkChocolate: '#3d2314',
-                        sweetPink: '#f2a1b5',
-                        deepBurgundy: '#500713',
-                        softGray: '#f3f4f6'
-                    },
-                    fontFamily: {
-                        serif: ['Georgia', 'serif'],
-                        sans: ['Inter', 'sans-serif']
-                    }
+                    colors: { cream: '#fdfbf7', darkChocolate: '#2a1810', sweetPink: '#f2a1b5', deepBurgundy: '#660f24', neonBurgundy: '#ff2a5f', softGray: '#f3f4f6' },
+                    fontFamily: { brand: ['Playfair Display', 'serif'], sans: ['Outfit', 'sans-serif'] },
+                    boxShadow: { glow: '0 0 15px rgba(255, 42, 95, 0.5)', glass: '0 8px 32px 0 rgba(31, 38, 135, 0.07)' }
                 }
             }
         }
     </script>
-
-    <!-- Hojas de estilo personalizadas CSS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Lógica de control JavaScript vinculada con propiedad defer -->
     <script src="main.js" defer></script>
 </head>
-<body class="bg-cream text-darkChocolate font-sans antialiased selection:bg-sweetPink selection:text-darkChocolate">
+<body class="bg-pattern text-darkChocolate antialiased selection:bg-neonBurgundy selection:text-white">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-darkChocolate/10">
+    <header class="sticky top-0 z-50 futuristic-nav backdrop-blur-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo & Identity -->
             <a href="#" class="flex items-center space-x-3 group">
-                <img src="b8f2a9c0-bd46-45fa-ac7e-93a93225cf30.png" alt="SweetBite Logo" class="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1558961312-50345c041a45?auto=format&fit=crop&w=100&q=80'">
-                <span class="font-serif text-2xl font-bold tracking-tight text-darkChocolate">SweetBite</span>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-white rounded-full blur group-hover:blur-md transition-all opacity-20"></div>
+                    <img src="img/icono.png" alt="Icono SweetBite" class="w-12 h-12 object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" onerror="this.src='b8f2a9c0-bd46-45fa-ac7e-93a93225cf30.png'">
+                </div>
+                <span class="font-brand text-2xl font-bold tracking-wider text-white drop-shadow-md">SweetBite</span>
             </a>
 
-            <!-- Desktop Menu Navigation Links -->
-            <nav class="hidden md:flex space-x-8 font-medium">
-                <a href="#catalogo" class="text-darkChocolate/80 hover:text-darkChocolate transition-colors">Catálogo</a>
-                <a href="#nosotros" class="text-darkChocolate/80 hover:text-darkChocolate transition-colors">Nuestra Historia</a>
-                <a href="#suscripciones" class="text-darkChocolate/80 hover:text-darkChocolate transition-colors">Suscripciones</a>
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide uppercase">
+                <a href="#nosotros" class="nav-link">Quiénes somos</a>
+                <a href="#catalogo" class="nav-link">Colección</a>
+                <a href="#productos" class="nav-link">Productos</a>
+                <a href="#calculadora" class="nav-link">Pedidos</a>
+                <a href="#acerca" class="nav-link">Acerca de</a>
             </nav>
 
-            <!-- Interactive Cart Action Trigger -->
-            <div class="flex items-center space-x-4">
-                <button onclick="toggleCart()" class="relative p-2 text-darkChocolate hover:text-deepBurgundy transition-colors focus:outline-none" aria-label="Carrito de compras">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                    <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-deepBurgundy rounded-full transform translate-x-1/4 -translate-y-1/4 hidden">0</span>
+            <div class="flex items-center space-x-6">
+                <a href="#calculadora" class="hidden md:inline-flex btn-modern px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest">
+                    Encarga ya
+                </a>
+                
+                <button onclick="toggleCart()" class="relative p-2 text-white hover:text-sweetPink transition-colors focus:outline-none drop-shadow-md">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-neonBurgundy rounded-full transform translate-x-1/4 -translate-y-1/4 shadow-glow hidden">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- HERO INTRODUCTORY SECTION -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-darkChocolate leading-tight">
-                Momentos dulces, horneados a mano
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-sweetPink/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-neonBurgundy/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="glassmorphism p-10 rounded-3xl shadow-glass space-y-6">
+            <h1 class="font-brand text-5xl lg:text-7xl font-bold tracking-tight text-darkChocolate leading-tight">
+                El futuro del <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-deepBurgundy to-neonBurgundy">Sabor Artesanal</span>
             </h1>
-            <p class="text-lg text-darkChocolate/80 max-w-xl">
-                Descubre la magia en cada bocado con nuestras galletas artesanales, creadas con pasión y los mejores ingredientes locales.
+            <p class="text-lg text-darkChocolate/80">
+                Texturas que desafían la gravedad y sabores de otra dimensión. Galletas horneadas hoy, pensadas para el mañana.
             </p>
-            <div class="pt-2">
-                <a href="#catalogo" class="inline-block bg-deepBurgundy text-white font-semibold px-8 py-3 rounded-full hover:bg-darkChocolate transition-colors shadow-lg">
-                    Explorar Colección
-                </a>
+            <div class="pt-4 flex gap-4">
+                <a href="#calculadora" class="btn-modern px-8 py-3.5 rounded-2xl font-bold uppercase tracking-wider">Armar Pedido</a>
+                <a href="#catalogo" class="glassmorphism px-8 py-3.5 rounded-2xl font-bold uppercase tracking-wider hover:bg-white transition-colors">Ver Catálogo</a>
             </div>
         </div>
-        <div class="relative">
-            <div class="absolute inset-0 bg-sweetPink/20 rounded-full filter blur-3xl transform translate-x-4 translate-y-4"></div>
-            <img src="https://images.unsplash.com/photo-1499636136210-6f4ce9127154?auto=format&fit=crop&w=800&q=80" alt="Galletas SweetBite" class="relative rounded-2xl shadow-2xl w-full object-cover h-[400px] sm:h-[500px]">
+        <div class="relative group perspective-1000">
+            <img src="https://images.unsplash.com/photo-1499636136210-6f4ce9127154?auto=format&fit=crop&w=800&q=80" alt="Galletas Modernas" class="rounded-[2.5rem] shadow-2xl w-full object-cover h-[500px] border border-white/50 group-hover:rotate-1 transition-transform duration-500">
         </div>
     </section>
 
-    <!-- BRAND QUALITY & VALUE PROPOSITION -->
-    <section id="nosotros" class="bg-white py-16 border-y border-darkChocolate/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="grid grid-cols-2 gap-4">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Harina" class="rounded-xl shadow-md h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=400&q=80" alt="Masas" class="rounded-xl shadow-md h-48 w-full object-cover mt-8">
-            </div>
-            <div class="space-y-6">
-                <h2 class="font-serif text-3xl font-bold text-darkChocolate">Calidad que puedes saborear</h2>
-                <p class="text-darkChocolate/80 leading-relaxed">
-                    En SweetBite, creemos que lo extraordinario nace de lo simple. Por eso, solo utilizamos ingredientes naturales y locales. Nuestra harina es molida en piedra, nuestra mantequilla proviene de granjas cercanas y nuestro chocolate es de comercio justo. Cada galleta se hornea a mano en pequeños lotes para garantizar esa textura perfecta que tanto amas.
-                </p>
-                <ul class="space-y-3 font-medium">
-                    <li class="flex items-center space-x-3 text-darkChocolate/90">
-                        <svg class="h-5 w-5 text-deepBurgundy" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span>100% Ingredientes Naturales</span>
-                    </li>
-                    <li class="flex items-center space-x-3 text-darkChocolate/90">
-                        <svg class="h-5 w-5 text-deepBurgundy" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span>Sin Conservantes Artificiales</span>
-                    </li>
-                    <li class="flex items-center space-x-3 text-darkChocolate/90">
-                        <svg class="h-5 w-5 text-deepBurgundy" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span>Horneado Diario con Amor</span>
-                    </li>
-                </ul>
+    <section id="calculadora" class="py-16 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-darkChocolate to-[#1a0f0a] rounded-[3rem] p-8 md:p-14 shadow-2xl border border-white/10 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-neonBurgundy/20 rounded-full blur-3xl"></div>
+                
+                <div class="md:w-1/3 flex flex-col items-center relative z-10 text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8201/8201149.png" alt="BiteBot" class="w-48 animate-[bounce_3s_ease-in-out_infinite] drop-shadow-glow filter invert" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712139.png'">
+                    <h3 class="font-brand text-3xl font-bold mt-6 text-transparent bg-clip-text bg-gradient-to-r from-sweetPink to-white">BiteBot 3000</h3>
+                    <p class="text-xs font-semibold uppercase tracking-widest mt-1 text-sweetPink">Tu Asistente Cuántico</p>
+                </div>
+
+                <div class="md:w-2/3 space-y-6 w-full relative z-10">
+                    <h2 class="font-brand text-4xl font-bold text-white">Calcula tu pedido especial</h2>
+                    <p class="text-white/80 text-lg">
+                        ¡Bip bop! Cada galleta mágica vale <strong class="text-neonBurgundy">800 CLP</strong>. Ingresa la cantidad en bolsas y yo calcularé tus descuentos (10% en media docena, 20% sobre 12 uds).
+                    </p>
+                    
+                    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-sm w-fit">
+                        <input type="number" id="robot-qty" min="1" value="1" oninput="calculateRobotPrice()" class="w-24 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-neonBurgundy focus:outline-none text-2xl font-bold text-center">
+                        <span class="text-xl font-semibold text-white/90">Galletas</span>
+                    </div>
+                    
+                    <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="space-y-1 text-center sm:text-left">
+                            <p class="text-sm text-white/50 font-medium">Subtotal sin dto: <span id="robot-subtotal" class="line-through hidden"></span></p>
+                            <p id="robot-msg" class="text-sm text-white/60">Precio normal aplicado</p>
+                        </div>
+                        <div class="text-center sm:text-right">
+                            <p class="text-xs font-bold uppercase tracking-widest text-sweetPink">Total Estimado</p>
+                            <p class="text-5xl font-brand font-bold text-white drop-shadow-glow" id="robot-total">$800</p>
+                        </div>
+                    </div>
+
+                    <button id="robot-add-btn" data-qty="1" data-price="800" onclick="addRobotToCart()" class="btn-modern w-full py-4 rounded-2xl font-bold text-lg uppercase tracking-widest flex justify-center items-center gap-3">
+                        Generar Orden en Carrito
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- COOKIE CATALOGUE GRID -->
-    <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <section id="productos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div id="catalogo" class="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-                <span class="text-xs font-bold uppercase tracking-widest text-deepBurgundy block mb-2">Los Favoritos</span>
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkChocolate">The Cookie Collection</h2>
+                <span class="text-sm font-bold uppercase tracking-widest text-neonBurgundy block mb-2">Colección 2026</span>
+                <h2 class="font-brand text-4xl md:text-5xl font-bold text-darkChocolate">Catálogo de Sabores</h2>
             </div>
-            <!-- Interactive Category Filter Tab Items -->
-            <div class="flex flex-wrap gap-2 mt-6 md:mt-0 overflow-x-auto pb-2">
-                <button onclick="filterProducts('all')" class="cat-btn px-4 py-2 rounded-full bg-deepBurgundy text-white text-sm font-medium transition-all shadow-sm">Todos</button>
-                <button onclick="filterProducts('clasicas')" class="cat-btn px-4 py-2 rounded-full bg-white border border-darkChocolate/10 text-darkChocolate text-sm font-medium hover:bg-softGray transition-all">Clásicas</button>
-                <button onclick="filterProducts('rellenas')" class="cat-btn px-4 py-2 rounded-full bg-white border border-darkChocolate/10 text-darkChocolate text-sm font-medium hover:bg-softGray transition-all">Rellenas</button>
-                <button onclick="filterProducts('veganas')" class="cat-btn px-4 py-2 rounded-full bg-white border border-darkChocolate/10 text-darkChocolate text-sm font-medium hover:bg-softGray transition-all">Veganas</button>
-                <button onclick="filterProducts('limitada')" class="cat-btn px-4 py-2 rounded-full bg-white border border-darkChocolate/10 text-darkChocolate text-sm font-medium hover:bg-softGray transition-all">Edición Limitada</button>
+            <div class="flex flex-wrap gap-3 mt-6 md:mt-0 pb-2">
+                <button onclick="filterProducts('all')" class="cat-btn btn-modern px-5 py-2.5 rounded-full text-sm font-bold tracking-wide">Todos</button>
+                <button onclick="filterProducts('clasicas')" class="cat-btn glassmorphism px-5 py-2.5 rounded-full text-darkChocolate text-sm font-bold tracking-wide">Clásicas</button>
+                <button onclick="filterProducts('rellenas')" class="cat-btn glassmorphism px-5 py-2.5 rounded-full text-darkChocolate text-sm font-bold tracking-wide">Rellenas</button>
             </div>
         </div>
-
-        <!-- Target Grid Injection Box -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"></div>
     </section>
 
-    <!-- TESTIMONIALS FROM LOYAL CLIENTS -->
-    <section class="bg-sweetPink/10 py-16 border-t border-darkChocolate/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="font-serif text-3xl font-bold text-darkChocolate mb-12">Lo que dicen nuestros SweetLovers</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-darkChocolate/5 space-y-4">
-                    <div class="text-amber-400">★★★★★</div>
-                    <p class="text-darkChocolate/80 italic">"Las mejores galletas que he probado en mi vida. La de Salted Caramel es simplemente de otro mundo."</p>
-                    <p class="font-bold text-sm text-darkChocolate">— Maria G.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-darkChocolate/5 space-y-4">
-                    <div class="text-amber-400">★★★★★</div>
-                    <p class="text-darkChocolate/80 italic">"El regalo perfecto. El packaging es tan cuidado como el sabor. ¡Repetiré seguro!"</p>
-                    <p class="font-bold text-sm text-darkChocolate">— Carlos R.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-darkChocolate/5 space-y-4">
-                    <div class="text-amber-400">★★★★★</div>
-                    <p class="text-darkChocolate/80 italic">"Se nota que usan ingredientes de verdad. Me encanta que apoyen a los productores locales."</p>
-                    <p class="font-bold text-sm text-darkChocolate">— Elena M.</p>
-                </div>
-            </div>
+    <section id="nosotros" class="bg-white/50 backdrop-blur-md py-16 border-y border-white/40">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-6">
+            <h2 id="acerca" class="font-brand text-4xl font-bold text-darkChocolate">Acerca de la Magia</h2>
+            <p class="max-w-2xl mx-auto text-darkChocolate/80 text-lg leading-relaxed">
+                SweetBite nació con una premisa: fusionar las recetas horneadas a mano de la abuela con la estética y eficiencia del futuro. No usamos conservantes, solo pasión, mantequilla de verdad y chocolate de alto porcentaje.
+            </p>
         </div>
     </section>
 
-    <!-- SUBSCRIPTION NEWSLETTER BOX -->
-    <section id="suscripciones" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="bg-deepBurgundy rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden shadow-xl">
-            <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full filter blur-xl"></div>
-            <div class="relative z-10 max-w-2xl mx-auto space-y-4">
-                <h2 class="font-serif text-3xl font-bold">¿Quieres un bocado gratis?</h2>
-                <p class="text-white/80">Suscríbete a nuestra newsletter y recibe un 10% de descuento en tu primer pedido y noticias sobre nuevos sabores exclusivos.</p>
-                <form onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');" class="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
-                    <input type="email" placeholder="Tu correo electrónico" required class="px-5 py-3 rounded-full text-darkChocolate bg-white focus:outline-none focus:ring-2 focus:ring-sweetPink w-full sm:max-w-md">
-                    <button type="submit" class="bg-white text-deepBurgundy font-bold px-8 py-3 rounded-full hover:bg-cream transition-colors">Suscribirme</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CORPORATE FOOTER -->
-    <footer class="bg-white border-t border-darkChocolate/10 py-12 text-sm text-darkChocolate/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="col-span-2 space-y-3">
-                <span class="font-serif text-xl font-bold text-darkChocolate block">SweetBite</span>
-                <p class="max-w-xs">© 2026 SweetBite Artisanal Cookies. Handcrafted with care using only the finest local ingredients.</p>
-            </div>
-            <div class="space-y-2">
-                <span class="font-bold text-darkChocolate block">Explorar</span>
-                <a href="#catalogo" class="block hover:text-darkChocolate">Catálogo</a>
-                <a href="#nosotros" class="block hover:text-darkChocolate">Nosotros</a>
-                <a href="#suscripciones" class="block hover:text-darkChocolate">Suscripciones</a>
-            </div>
-            <div class="space-y-2">
-                <span class="font-bold text-darkChocolate block">Ayuda & Soporte</span>
-                <a href="#" class="block hover:text-darkChocolate">Políticas de Privacidad</a>
-                <a href="#" class="block hover:text-darkChocolate">Información de Envío</a>
-                <a href="#" class="block hover:text-darkChocolate">Contacto</a>
-            </div>
-        </div>
+    <footer class="bg-darkChocolate py-12 text-center text-white/60">
+        <p class="font-brand text-2xl text-white mb-2">SweetBite</p>
+        <p>© 2026 SweetBite - Panadería del Futuro. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- SLIDE OVER COMPONENT: SHOPPING CART SIDEBAR -->
-    <div id="cart-sidebar" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
-        <div class="absolute inset-0 overflow-hidden">
-            <div onclick="toggleCart()" class="absolute inset-0 bg-darkChocolate/50 backdrop-blur-xs transition-opacity"></div>
-            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                <div class="pointer-events-auto w-screen max-w-md bg-cream shadow-2xl flex flex-col h-full border-l border-darkChocolate/10">
-                    <div class="px-6 py-6 border-b border-darkChocolate/10 flex items-center justify-between bg-white">
-                        <h2 class="font-serif text-xl font-bold text-darkChocolate">Tu Carrito</h2>
-                        <button onclick="toggleCart()" class="p-2 text-darkChocolate/60 hover:text-darkChocolate focus:outline-none">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-                        </button>
-                    </div>
-                    
-                    <!-- Scrollable items box -->
-                    <div id="cart-items-container" class="flex-1 overflow-y-auto px-6 py-4 space-y-4 custom-scrollbar">
-                        <div id="empty-cart-msg" class="text-center py-12 text-darkChocolate/60 space-y-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-                            <p>Tu carrito está vacío. ¡Agrega tus antojos!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="border-t border-darkChocolate/10 px-6 py-6 bg-white space-y-4">
-                        <div class="flex justify-between text-base font-bold text-darkChocolate">
-                            <span>Subtotal</span>
-                            <span id="cart-subtotal">$0.00</span>
-                        </div>
-                        <p class="text-xs text-darkChocolate/60">Los costos de envío y los impuestos se calcularán en la pasarela de pago.</p>
-                        <button onclick="openCheckoutModal()" id="checkout-btn" disabled class="w-full bg-deepBurgundy text-white font-bold py-3.5 rounded-full shadow-lg hover:bg-darkChocolate transition-colors opacity-50 cursor-not-allowed">
-                            Proceder al Pago
-                        </button>
-                    </div>
-                </div>
+    <div id="cart-sidebar" class="fixed inset-0 z-50 hidden" role="dialog">
+        <div class="absolute inset-0 bg-darkChocolate/70 backdrop-blur-sm" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-md w-full bg-cream shadow-2xl flex flex-col">
+            <div class="p-6 bg-white border-b border-darkChocolate/10 flex justify-between">
+                <h2 class="font-brand text-2xl font-bold">Tu Orden</h2>
+                <button onclick="toggleCart()" class="text-darkChocolate"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+            </div>
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+                <div id="empty-cart-msg" class="text-center py-12 text-darkChocolate/50"><p>No hay galletas aquí :(</p></div>
+            </div>
+            <div class="p-6 bg-white border-t border-darkChocolate/10">
+                <div class="flex justify-between font-bold text-lg mb-4"><span>Total:</span><span id="cart-subtotal">$0 CLP</span></div>
+                <button onclick="openCheckoutModal()" id="checkout-btn" disabled class="btn-modern w-full py-4 rounded-xl font-bold uppercase tracking-widest disabled:opacity-50">Proceder al Pago</button>
             </div>
         </div>
     </div>
 
-    <!-- CENTRAL MODAL: SECURE PAYMENT GATEWAY -->
-    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkChocolate/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-darkChocolate/10">
-            <div class="px-6 py-5 bg-cream border-b border-darkChocolate/15 flex items-center justify-between">
-                <span class="font-serif font-bold text-lg text-darkChocolate">Pasarela Segura SweetBite</span>
-                <button onclick="closeCheckoutModal()" class="p-1 text-darkChocolate/60 hover:text-darkChocolate">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-            </div>
-            
-            <!-- Injection payment form container -->
-            <form id="payment-form" onsubmit="processPayment(event)" class="p-6 space-y-4">
-                <div class="bg-softGray/50 p-4 rounded-xl flex justify-between items-center text-sm font-semibold mb-2">
-                    <span>Total a pagar:</span>
-                    <span id="modal-total-amount" class="text-base font-bold text-deepBurgundy">$0.00</span>
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkChocolate/80 backdrop-blur-md hidden">
+        <div class="glassmorphism rounded-[2rem] max-w-lg w-full p-8 shadow-glass border border-white/20">
+            <h2 class="font-brand text-3xl font-bold text-darkChocolate mb-6 border-b border-darkChocolate/10 pb-4">Checkout Seguro</h2>
+            <form id="payment-form" onsubmit="processPayment(event)" class="space-y-4">
+                <div class="bg-white/50 p-4 rounded-xl flex justify-between font-bold text-lg">
+                    <span>A Pagar:</span> <span id="modal-total-amount" class="text-neonBurgundy">$0 CLP</span>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wide text-darkChocolate/70 mb-1">Nombre en la tarjeta</label>
-                    <input type="text" required placeholder="Ej. María García" class="w-full px-4 py-2.5 rounded-xl border border-darkChocolate/20 focus:outline-none focus:ring-2 focus:ring-sweetPink">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wide text-darkChocolate/70 mb-1">Número de Tarjeta</label>
-                    <input type="text" required pattern="[0-9]{16}" maxlength="16" placeholder="4123 4567 8901 2345" class="w-full px-4 py-2.5 rounded-xl border border-darkChocolate/20 focus:outline-none focus:ring-2 focus:ring-sweetPink">
-                </div>
+                <input type="text" required placeholder="Número de Tarjeta (16 dígitos)" pattern="[0-9]{16}" class="w-full p-4 rounded-xl border border-darkChocolate/20 focus:ring-2 focus:ring-neonBurgundy outline-none">
                 <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wide text-darkChocolate/70 mb-1">Vencimiento</label>
-                        <input type="text" required placeholder="MM/AA" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5" class="w-full px-4 py-2.5 rounded-xl border border-darkChocolate/20 focus:outline-none focus:ring-2 focus:ring-sweetPink text-center">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wide text-darkChocolate/70 mb-1">CVC / CVV</label>
-                        <input type="password" required pattern="[0-9]{3,4}" maxlength="4" placeholder="•••" class="w-full px-4 py-2.5 rounded-xl border border-darkChocolate/20 focus:outline-none focus:ring-2 focus:ring-sweetPink text-center">
-                    </div>
+                    <input type="text" required placeholder="MM/AA" class="w-full p-4 rounded-xl border border-darkChocolate/20 outline-none text-center">
+                    <input type="password" required placeholder="CVV" class="w-full p-4 rounded-xl border border-darkChocolate/20 outline-none text-center">
                 </div>
-                <button type="submit" id="pay-submit-btn" class="w-full bg-deepBurgundy text-white font-bold py-3.5 rounded-xl shadow-lg hover:bg-darkChocolate transition-all mt-4 flex items-center justify-center space-x-2">
-                    <span id="pay-btn-text">Confirmar Pago Seguro</span>
-                    <span id="pay-spinner" class="hidden animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
+                <button type="submit" class="btn-modern w-full py-4 rounded-xl font-bold uppercase tracking-widest mt-4">
+                    <span id="pay-btn-text">Pagar Ahora</span>
+                    <span id="pay-spinner" class="hidden animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full mx-auto"></span>
                 </button>
             </form>
-
-            <!-- Success feedback frame screen -->
-            <div id="payment-success" class="p-8 text-center space-y-4 hidden">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-600 font-bold text-xl">✓</div>
-                <h3 class="font-serif text-2xl font-bold text-darkChocolate">¡Pedido Confirmado!</h3>
-                <p class="text-sm text-darkChocolate/80 max-w-xs mx-auto">Tu pago ha sido procesado de forma segura. Tus galletas artesanales ya están en camino al horno.</p>
-                <div class="pt-2">
-                    <button type="button" onclick="closeCheckoutModal(true)" class="bg-deepBurgundy text-white font-bold px-6 py-2 rounded-full hover:bg-darkChocolate transition-colors">Entendido</button>
-                </div>
+            <div id="payment-success" class="text-center py-8 hidden">
+                <div class="text-5xl mb-4">✨</div>
+                <h3 class="font-brand text-3xl font-bold text-green-600 mb-2">¡Pago Exitoso!</h3>
+                <p class="text-darkChocolate/80 mb-6">Tus galletas entran al horno en este momento.</p>
+                <button onclick="closeCheckoutModal(true)" class="btn-modern px-8 py-3 rounded-xl font-bold">Cerrar y Volver</button>
             </div>
         </div>
     </div>
-
 </body>
 </html>

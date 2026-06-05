@@ -4,15 +4,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cream: '#faf8f5',
-        darkChocolate: '#3d2314',
+        cream: '#fdfbf7',
+        darkChocolate: '#2a1810',
         sweetPink: '#f2a1b5',
-        deepBurgundy: '#500713',
+        deepBurgundy: '#660f24', // Burdeo intenso
+        neonBurgundy: '#ff2a5f', // Rojo neón para efectos futuristas
         softGray: '#f3f4f6'
       },
       fontFamily: {
-        serif: ['Georgia', 'serif'],
-        sans: ['Inter', 'sans-serif']
+        brand: ['"Playfair Display"', 'serif'], // Letras elegantes
+        sans: ['"Outfit"', 'sans-serif'] // Letras modernas
+      },
+      boxShadow: {
+        'glow': '0 0 15px rgba(255, 42, 95, 0.5)',
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)'
       }
     },
   },
